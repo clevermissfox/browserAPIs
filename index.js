@@ -19,6 +19,7 @@ const phrases = [
 // const resultPara = document.querySelector('.result');
 const diagnosticPara = document.querySelector("[output]");
 const testBtn = document.querySelector("[test-btn]");
+const videoFrame = document.querySelector('#video-frame')
 
 function randomPhrase() {
   const number = Math.floor(Math.random() * phrases.length);
@@ -130,15 +131,6 @@ testBtn.addEventListener("click", testSpeech);
 
 //****************Text to Speech********************
 
-// const inputForm = document.querySelector("form");
-// const inputTxt = document.querySelector(".txt");
-// const voiceSelect = document.querySelector("select");
-
-// const pitch = document.querySelector("#pitch");
-// const pitchValue = document.querySelector(".pitch-value");
-// const rate = document.querySelector("#rate");
-// const rateValue = document.querySelector(".rate-value");
-
 const synth = window.speechSynthesis;
 let voices = [];
 
@@ -155,23 +147,7 @@ function populateVoiceList() {
       return +1;
     }
   });
-  //   const selectedIndex =
-  //     voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
-  //     voiceSelect.innerHTML = "";
 
-  //   for (let i = 0; i < voices.length; i++) {
-  //     const option = document.createElement("option");
-  //     option.textContent = `${voices[i].name} (${voices[i].lang})`;
-
-  //     if (voices[i].default) {
-  //       option.textContent += " -- DEFAULT";
-  //     }
-
-  //     option.setAttribute("data-lang", voices[i].lang);
-  //     option.setAttribute("data-name", voices[i].name);
-  //     voiceSelect.appendChild(option);
-  //   }
-  //   voiceSelect.selectedIndex = selectedIndex;
 }
 
 populateVoiceList();
@@ -191,15 +167,13 @@ function speak() {
 
     utterThis.onend = function (event) {
       console.log("SpeechSynthesisUtterance.onend");
+      videoFrame.setAttribute('src', 'blob:https://www.youtube.com/f45fa0e3-4b1a-4ee4-a682-d473692e32f3');
+      videoFrame.setAttribute('autoplay', '');
     };
 
     utterThis.onerror = function (event) {
       console.error("SpeechSynthesisUtterance.onerror");
     };
-
-    // const selectedOption =
-    //   voiceSelect.selectedOptions[0].getAttribute("data-name");
-    //   console.log(selectedOption)
 
     for (let i = 0; i < voices.length; i++) {
       if (voices[i].name === "Google UK English Male") {
@@ -213,13 +187,6 @@ function speak() {
   }
 }
 
-// inputForm.onsubmit = function (event) {
-//   event.preventDefault();
-
-//   speak();
-
-// //   inputTxt.blur();
-// };
 
 function sayThisIf(result) {
   if (result.includes("charging station")) {

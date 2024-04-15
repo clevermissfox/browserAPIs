@@ -167,7 +167,7 @@ function speak() {
 
     utterThis.onend = function (event) {
       console.log("SpeechSynthesisUtterance.onend");
-      videoFrame.setAttribute('src', 'https://i.imgur.com/OqQDI9V.mp4');
+      videoFrame.setAttribute('src', 'assets/y2mate.bz - Komatsu brand video 2024.mp4');
       videoFrame.setAttribute('autoplay', '');
     };
 

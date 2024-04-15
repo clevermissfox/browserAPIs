@@ -167,9 +167,8 @@ function speak() {
 
     utterThis.onend = function (event) {
       console.log("SpeechSynthesisUtterance.onend");
-      videoFrame.setAttribute('src', 'assets/y2mate.bz - Komatsu brand video 2024.mp4');
-      videoFrame.setAttribute('autoplay', '');
-      videoFrame.setAttribute('controls', '');
+      playVideoIf('charging station', 'assets/Komatsu_brand_video2024.mp4');
+      playVideoIf('the gentleman', 'assets/The_Gentleman_trailer.mp4');
     };
 
     utterThis.onerror = function (event) {
@@ -197,5 +196,13 @@ function sayThisIf(result) {
     return "The gentleman is number one in streaming on Netflix for several weeks running.";
   } else {
     return "I don't know enough about that to comment";
+  }
+}
+
+function playVideoIf(word, src){
+  if(speechResult.includes(word)) {
+    videoFrame.setAttribute('src', `${src}`);
+    videoFrame.setAttribute('autoplay', '');
+    videoFrame.setAttribute('controls', '');
   }
 }

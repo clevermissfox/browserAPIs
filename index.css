@@ -13,7 +13,7 @@
     --fs-small-clamp: clamp(1rem, 0.4821rem + 0.7143vw, 1.3rem);
 
 
-    --ff-primary: 'Poppins', system-ui;
+    --ff-primary: 'Jost', system-ui;
     --ff-secondary: 'Font Awesome 6 Pro';
 
     --fs-h1: var(--fs-h1-clamp);

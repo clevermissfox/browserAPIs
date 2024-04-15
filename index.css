@@ -283,9 +283,10 @@ body {
     text-wrap: pretty; 
     margin: 0;
     background: var(--clr-bg-body); 
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    gap: 1em;
     min-height: 100vh;
     padding: 1em; 
 } 
@@ -369,8 +370,10 @@ h3 {
 
 /* PROJECT SPECIFIC STYLES */
 .test-btn {
-    background-image: linear-gradient(to top right, oklch(45% 0.07 326), oklch(46% 0.07 212));
+    background-color: oklch(45% 0.07 326);
+    background-image: linear-gradient(to right, oklch(45% 0.07 326), oklch(46% 0.07 212));
     padding: 0.75em 1.2em;
     border-radius: 0.25em;
     line-height: 1; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }

@@ -283,7 +283,8 @@ body {
     text-wrap: pretty; 
     margin: 0;
     background: var(--clr-bg-body); 
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1em;

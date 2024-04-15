@@ -35,7 +35,7 @@ function testSpeech() {
   //   phrasePara.textContent = phrase;
   //   resultPara.textContent = 'Right or wrong?';
   //   resultPara.style.background = 'rgba(0,0,0,0.2)';
-  diagnosticPara.textContent = "...diagnostic messages";
+  diagnosticPara.textContent = "listening";
 
   var grammar = "#JSGF V1.0; grammar phrase; public <phrase> = ;";
   var recognition = new SpeechRecognition();

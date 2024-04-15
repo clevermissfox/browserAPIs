@@ -167,7 +167,7 @@ function speak() {
 
     utterThis.onend = function (event) {
       console.log("SpeechSynthesisUtterance.onend");
-      videoFrame.setAttribute('src', 'blob:https://www.youtube.com/f45fa0e3-4b1a-4ee4-a682-d473692e32f3');
+      videoFrame.setAttribute('src', 'https://youtu.be/NLsyKCkoMXI?feature=shared');
       videoFrame.setAttribute('autoplay', '');
     };
 
